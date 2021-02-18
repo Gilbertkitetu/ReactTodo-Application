@@ -6,21 +6,28 @@ import "./index.css";
 //import TodoList from "./TodoList";
 
 const name = "Gilbert Perez";
-const element = <h1>Hello, {name}</h1>;
+function tick() {
 
-    function formatName(user){
-        return user.firstName + ' ' + user.lastName;
-    }
-const user = {
-        firstName: 'Gilbert',
-    lastName: 'pere'
-};
+
+const element = (
+    <div>
+    <h1>Hello, {name}</h1>
+    <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+        );
+
 var destination = document.querySelector("#container");
 
 ReactDom.render(
     <div>
-        <p>Hello world! {formatName(user)}</p>
+
         {element}
+
+
+
     </div>,
     destination
 );
+    }
+
+        setInterval(tick, 1000);
